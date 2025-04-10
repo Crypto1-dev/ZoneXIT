@@ -1,18 +1,76 @@
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+# General
+*.o
+*.obj
+*.exe
+*.log
+*.bak
+*.swp
+*.tmp
+*~
+.DS_Store
+Thumbs.db
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# Build Artifacts (for ZoneXIT blockchain)
+build/
+dist/
+*.a
+*.so
+*.dylib
+*.dll
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
 
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
+# Dependencies (if using external libs for ZoneXIT)
+deps/
+external/
+vendor/
 
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem 
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
-Gemfile.lock
+# Node Data (for ZoneXIT blockchain)
+data/
+*.dat
+*.db
+debug.log
+peers.dat
+wallet.dat
+chainstate/
+blocks/
+
+# Configuration Files (avoid committing sensitive data)
+*.conf
+config/
+secrets/
+
+# C++ Specific (for ZoneXIT blockchain)
+*.gch
+*.pch
+*.ilk
+*.pdb
+*.suo
+*.sdf
+
+# JavaScript/Node.js (for Crypto1-dev.github.io wallet)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Environment Variables (for wallet or blockchain)
+.env
+*.env.local
+*.env.development
+*.env.production
+
+# Editor/IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sensitive Files
+*.key
+*.pem
+*.cert
+private/
